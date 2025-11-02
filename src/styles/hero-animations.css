@@ -1,0 +1,375 @@
+/* Aurora and Background Animations */
+@keyframes aurora-slow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    transform: rotate(120deg) scale(1.1);
+  }
+  66% {
+    transform: rotate(240deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.animate-aurora-slow {
+  animation: aurora-slow 20s ease-in-out infinite;
+}
+
+/* Floating Particles */
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.animate-float-up {
+  animation: float-up 8s linear infinite;
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 12s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes fade-pulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-fade-pulse {
+  animation: fade-pulse 4s ease-in-out infinite;
+}
+
+/* 3D Perspective */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Scroll Effects */
+@keyframes scroll-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll-reveal {
+  animation: scroll-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Card Animations */
+@keyframes card-flip-in-left {
+  from {
+    opacity: 0;
+    transform: rotateY(-90deg) translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg) translateX(0);
+  }
+}
+
+@keyframes card-flip-in-right {
+  from {
+    opacity: 0;
+    transform: rotateY(90deg) translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg) translateX(0);
+  }
+}
+
+.animate-card-flip-left {
+  animation: card-flip-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-card-flip-right {
+  animation: card-flip-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Counters Animation */
+@keyframes count-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-count-up {
+  animation: count-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 3D Cube Animations */
+@keyframes cube-float {
+  0%, 100% {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(0px);
+  }
+  25% {
+    transform: rotateX(5deg) rotateY(15deg) translateZ(10px);
+  }
+  50% {
+    transform: rotateX(-5deg) rotateY(30deg) translateZ(0px);
+  }
+  75% {
+    transform: rotateX(5deg) rotateY(45deg) translateZ(-10px);
+  }
+}
+
+.animate-cube-float {
+  animation: cube-float 6s ease-in-out infinite;
+}
+
+/* Neon Glow Effects */
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px rgba(59, 130, 246, 0.3),
+      0 0 10px rgba(59, 130, 246, 0.2),
+      0 0 15px rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px rgba(59, 130, 246, 0.6),
+      0 0 20px rgba(59, 130, 246, 0.4),
+      0 0 30px rgba(59, 130, 246, 0.2);
+  }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
+/* Ripple Effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple 0.6s linear;
+}
+
+/* Parallax Scroll */
+.parallax-slow {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Carousel 3D */
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel-scroll {
+  animation: carousel-scroll 30s linear infinite;
+}
+
+.animate-carousel-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Glass Blur Effect */
+.glass-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Progress Bar */
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress);
+  }
+}
+
+.animate-progress {
+  animation: progress-fill 0.3s ease-out;
+}
+
+/* Spring Transitions */
+.spring-transition {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Holographic Effect */
+@keyframes holographic {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.holographic-bg {
+  background: linear-gradient(
+    45deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(6, 182, 212, 0.1),
+    rgba(59, 130, 246, 0.1)
+  );
+  background-size: 200% 200%;
+  animation: holographic 4s ease infinite;
+}
+
+/* 3D Text Animations */
+@keyframes wireframe-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotateY(-180deg);
+    filter: brightness(1);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.1) rotateY(-90deg);
+    filter: brightness(1.5);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1) rotateY(0deg);
+    filter: brightness(2);
+  }
+  75% {
+    opacity: 0.6;
+    transform: scale(1.05) rotateY(90deg);
+    filter: brightness(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) rotateY(180deg);
+    filter: brightness(1);
+  }
+}
+
+/* Letter Explosion Effect */
+@keyframes letter-explode {
+  0% {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3) rotateZ(180deg);
+    opacity: 0.8;
+    filter: brightness(2) hue-rotate(90deg);
+  }
+  100% {
+    transform: scale(1) rotateZ(360deg);
+    opacity: 1;
+    filter: brightness(1) hue-rotate(0deg);
+  }
+}
+
+/* 3D Depth Animation */
+@keyframes depth-shift {
+  0%, 100% {
+    transform: translateZ(0px);
+  }
+  50% {
+    transform: translateZ(100px);
+  }
+}
+
+/* Glitch Effect */
+@keyframes text-glitch {
+  0%, 100% {
+    transform: translateX(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translateX(-2px);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: translateX(2px);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: translateX(-1px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translateX(1px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.animate-letter-explode {
+  animation: letter-explode 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-depth-shift {
+  animation: depth-shift 3s ease-in-out infinite;
+}
+
+.animate-text-glitch {
+  animation: text-glitch 0.3s ease-in-out;
+}

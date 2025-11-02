@@ -1,0 +1,227 @@
+@import './styles/hero-animations.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* VITS Dark Theme Design System */
+    --background: 222 47% 6%;
+    --foreground: 215 20% 91%;
+
+    --card: 222 44% 11%;
+    --card-foreground: 215 20% 91%;
+
+    --popover: 222 44% 11%;
+    --popover-foreground: 215 20% 91%;
+
+    --primary: 189 94% 43%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 215 20% 91%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 16% 57%;
+
+    --accent: 189 94% 43%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 215 20% 91%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 189 94% 43%;
+
+    --radius: 0.5rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 6%) 0%, hsl(215 25% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222 44% 11%) 0%, hsl(217 33% 13%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(189 94% 43%) 0%, hsl(199 89% 48%) 100%);
+    
+    /* Shadows */
+    --shadow-subtle: 0 2px 8px hsl(222 47% 4% / 0.3);
+    --shadow-medium: 0 4px 16px hsl(222 47% 4% / 0.4);
+    --shadow-glow: 0 0 24px hsl(189 94% 43% / 0.2);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* NotFound playful styles */
+.animate-tilt { animation: tilt 6s ease-in-out infinite; }
+@keyframes tilt { 0%,100% { transform: rotate(-2deg) } 50% { transform: rotate(2deg) } }
+
+.confetti { position: absolute; width: 8px; height: 8px; border-radius: 2px; background: rgba(249,115,22,0.12); box-shadow: 0 0 8px rgba(189,94,43,0.06); animation: confetti-fall 3s linear infinite; border: 1px solid rgba(255,255,255,0.03); }
+.confetti::before, .confetti::after { content: ''; position: absolute; width: 8px; height: 8px; border-radius: 2px; }
+.confetti::before { background: rgba(96,165,250,0.10); left: -10px; top: 2px; animation: confetti-tilt 3.5s linear infinite; border: 1px solid rgba(255,255,255,0.03); }
+.confetti::after { background: rgba(52,211,153,0.08); left: 10px; top: -4px; animation: confetti-spin 2.8s linear infinite; border: 1px solid rgba(255,255,255,0.03); }
+
+@keyframes confetti-fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 1 } 100% { transform: translateY(120px) rotate(300deg); opacity: 0.2 } }
+@keyframes confetti-tilt { 0% { transform: rotate(0deg) } 50% { transform: rotate(45deg) } 100% { transform: rotate(0deg) } }
+@keyframes confetti-spin { 0% { transform: rotate(0deg) } 100% { transform: rotate(360deg) } }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_24px_hsl(189_94%_43%/0.2)];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .btn-glow {
+    @apply relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-primary before:to-cyan-400 before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-20;
+  }
+
+  /* 3D Hero Scene styles */
+  .hero-3d-wrapper {
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+  }
+
+  .scene {
+    width: 640px;
+    height: 360px;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .floating-cubes {
+    position: relative;
+    width: 420px;
+    height: 260px;
+    transform-style: preserve-3d;
+  }
+
+  .cube {
+    position: absolute;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    animation: rotateAround 8s linear infinite;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.45));
+  }
+
+  .cube--large { left: 40px; top: 20px; width: 140px; height: 140px; animation-duration: 10s; }
+  .cube--med { left: 180px; top: 60px; width: 110px; height: 110px; animation-duration: 8s; animation-direction: reverse; }
+  .cube--small { left: 320px; top: 10px; width: 70px; height: 70px; animation-duration: 6s; }
+
+  .cube .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.04);
+    box-sizing: border-box;
+    backdrop-filter: blur(4px);
+  }
+
+  .cube .face--front  { transform: translateZ(calc(var(--s) / 2)); }
+  .cube .face--back   { transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+  .cube .face--right  { transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
+  .cube .face--left   { transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
+  .cube .face--top    { transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
+  .cube .face--bottom { transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+
+  /* use CSS variables for cube size to compute translateZ properly */
+  .cube { --s: 100px; }
+  .cube--large { --s: 140px; }
+  .cube--med { --s: 110px; }
+  .cube--small { --s: 70px; }
+
+  @keyframes rotateAround {
+    0% { transform: rotateX(-10deg) rotateY(0deg) translateZ(0px); }
+    50% { transform: rotateX(10deg) rotateY(180deg) translateZ(40px); }
+    100% { transform: rotateX(-10deg) rotateY(360deg) translateZ(0px); }
+  }
+  @keyframes leader-scale {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-leader-scale {
+  animation: leader-scale 0.5s ease-out forwards;
+}
+
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .cube { animation: none !important; }
+  }
+  /* Animated WebGL hero canvas */
+  .hero-animated-wrapper {
+    overflow: hidden;
+  }
+  .hero-animated-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    /* hide canvas and use gradient background when user prefers reduced motion */
+    .hero-animated-canvas { display: none; }
+  }
+  .hero-model-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.95;
+  }
+  .hero-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(2,6,10,0.55); /* darken scene for legibility */
+    z-index: 1;
+    pointer-events: none;
+  }
+}
