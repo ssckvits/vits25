@@ -35,67 +35,68 @@ const Events = () => {
     //   title: 'AI & Machine Learning Workshop',
     //   date: 'March 5, 2025',
     //   time: '2:00 PM - 6:00 PM',
-    //   location: 'Tech Building, Room 301',
+    //   location: 'Tech Building, Room 30,
     //   description: 'Dive into the world of AI and ML. Learn fundamental concepts and build your first machine learning model.',
     //   attendees: '60+',
     //   image: event3,
     // },
   ];
-
+  
   const pastEvents = [
     {
-      title: 'ICT Workshop',
-      date: 'January 20, 2024',
-      attendees: '50',
-      image: '../src/assets/events/1.jpg',
-    },
-    {
-      title: 'ICT Workshop',
-      date: 'January 20, 2024',
-      attendees: '50',
-      image: '../src/assets/events/2.jpg',
-    },
-    {
-      title: 'ICT Workshop',
-      date: 'January 20, 2024',
-      attendees: '50',
-      image: '../src/assets/events/3.jpg',
-    },
-    {
-      title: 'ICT Workshop',
-      date: 'January 20, 2024',
-      attendees: '50',
-      image: '../src/assets/events/4.jpg',
-    },
-    {
-      title: 'ICT Workshop',
-      date: 'January 20, 2024',
-      attendees: '50',
-      image: '../src/assets/events/5.jpg',
-    },
-    {
       title: 'NEXNOVA` 24',
-      date: 'January 20, 2024',
-      attendees: '50',
+      date: 'February 07, 2025',
+      attendees: '100+',
       image: '../src/assets/events/6.jpg',
     },
     {
-      title: 'AI For All',
-      date: 'January 20, 2024',
-      attendees: '50',
-      image: '../src/assets/events/7.jpg',
+      title: "VITS Academy 24'",
+      date: 'July 06, 2024',
+      attendees: '50+',
+      image: '../src/assets/events/1.jpg',
+    },
+     {
+      title: 'Intra School Quiz Competition',
+      date: 'April 13, 2024',
+      attendees: '50+',
+      image: '../src/assets/events/10.jpg',
+    },
+
+    {
+      title: 'Intra School Quiz Competition',
+      date: 'April 13, 2024',
+      attendees: '50+',
+      image: '../src/assets/events/5.jpg',
+    },
+        {
+      title: 'Intra School Workshop (Phase 2)',
+      date: 'April 13, 2024',
+      attendees: '50+',
+      image: '../src/assets/events/4.jpg',
+    },
+        {
+      title: 'Intra School Workshop (Phase 1)',
+      date: 'April 13, 2024',
+      attendees: '50+',
+      image: '../src/assets/events/3.jpg',
     },
     {
-      title: 'Project Cascade',
-      date: 'January 20, 2024',
-      attendees: '50',
-      image: '../src/assets/events/8.jpg',
+      title: 'AI For All',
+      date: 'March 13, 2024',
+      attendees: '100+',
+      image: '../src/assets/events/7.jpg',
     },
     {
       title: 'NEXNOVA` 23',
       date: 'March 10, 2023',
-      attendees: '50',
+      attendees: '100+',
       image: '../src/assets/events/9.jpg',
+    },
+    {
+      title: 'Project Cascade',
+      date: 'December 22, 2021',
+      attendees: '100+',
+      image: '../src/assets/events/8.jpg',
     },
   ];
 
