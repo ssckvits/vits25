@@ -235,19 +235,26 @@ function Home() {
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       <ScrollEffects />
       <InteractiveHero />
-      
-      <RotatingText
-        texts={['Innovative', 'Competitive', 'Relentless', 'Collaborative', 'Passionate']}
-        mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg "
-        staggerFrom={"last"}
-        initial={{ y: "100%" }}
-        animate={{ y: 0 }}
-        exit={{ y: "-120%" }}
-        staggerDuration={0.025}
-        splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-        transition={{ type: "spring", damping: 30, stiffness: 400 }}
-        rotationInterval={2000}
-      />
+
+      {/* Rotating Text */}
+      <div className="flex justify-center">
+        <div className="min-w-[300px] h-24 flex items-center mt-10 mb-16">
+          <h2 className="text-3xl font-bold">Creative</h2>
+          <div className="w-3"></div>
+          <RotatingText
+            texts={['Innovative', 'Competitive', 'Relentless', 'Collaborative', 'Passionate']}
+            mainClassName="px-4 sm:px-4 md:px-6 bg-cyan-300 text-black overflow-hidden py-1 sm:py-2 md:py-3 justify-center rounded-lg font-bold text-3xl"
+            staggerFrom={"last"}
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-120%" }}
+            staggerDuration={0.025}
+            splitLevelClassName="overflow-hidden pb-1 sm:pb-2 md:pb-2"
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            rotationInterval={2000}
+          />
+        </div>
+      </div>
 
       <EnhancedAboutSection />
       {/* <EnhancedFeedSection /> */}
@@ -312,21 +319,21 @@ function Home() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  "I am proud to lead an institution that fosters innovation and technical excellence. 
-                  Our ICT Society exemplifies the spirit of learning, collaboration, and technological 
-                  advancement that we aim to instill in every student. Through various initiatives, workshops, 
-                  and projects, our students are not just learning technology – they're shaping the future of it. 
-                  The achievements of our ICT Society demonstrate that with dedication and the right guidance, our 
+                  "I am proud to lead an institution that fosters innovation and technical excellence.
+                  Our ICT Society exemplifies the spirit of learning, collaboration, and technological
+                  advancement that we aim to instill in every student. Through various initiatives, workshops,
+                  and projects, our students are not just learning technology – they're shaping the future of it.
+                  The achievements of our ICT Society demonstrate that with dedication and the right guidance, our
                   students can compete and excel at any level."
                 </p>
                 <p>
-                  - Mr. R. A. A. R. Ranasinghe,<br/> Principal of St. Sylvester's College
+                  - Mr. R. A. A. R. Ranasinghe,<br /> Principal of St. Sylvester's College
                 </p>
               </div>
             </div>
             <div>
               <img
-                src= "../src/assets/team/1.jpg"
+                src="../src/assets/team/1.jpg"
                 alt="Principal of St. Sylvester's College"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
