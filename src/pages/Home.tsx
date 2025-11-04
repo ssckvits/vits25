@@ -114,42 +114,6 @@ function Home() {
       source: 'Eco Innovations',
       url: '#',
     },
-    {
-      title: 'Gemini 2.5 Pro: A Leap in Multimodal AI',
-      summary: 'Google\'s latest model, Gemini 2.5 Pro, showcases groundbreaking capabilities in understanding and processing text, images, and audio simultaneously. This new architecture promises to revolutionize AI applications, from creative content generation to complex data analysis, setting a new benchmark for the industry.',
-      source: 'AI Today',
-      url: '#',
-    },
-    {
-      title: 'The Rise of Quantum Computing in 2024',
-      summary: 'Quantum computers are moving from theoretical concepts to practical tools. Major tech companies are racing to achieve quantum supremacy, with recent breakthroughs indicating that we are on the cusp of solving problems previously thought unsolvable, impacting fields like medicine, finance, and cryptography.',
-      source: 'Tech Chronicle',
-      url: '#',
-    },
-    {
-      title: 'Sustainable Tech: Innovations for a Greener Planet',
-      summary: 'From biodegradable electronics to AI-optimized energy grids, the tech industry is increasingly focusing on sustainability. This article explores the latest innovations designed to reduce the environmental impact of technology, highlighting companies that are leading the charge towards a more eco-friendly future.',
-      source: 'Eco Innovations',
-      url: '#',
-    },
-    {
-      title: 'Gemini 2.5 Pro: A Leap in Multimodal AI',
-      summary: 'Google\'s latest model, Gemini 2.5 Pro, showcases groundbreaking capabilities in understanding and processing text, images, and audio simultaneously. This new architecture promises to revolutionize AI applications, from creative content generation to complex data analysis, setting a new benchmark for the industry.',
-      source: 'AI Today',
-      url: '#',
-    },
-    {
-      title: 'The Rise of Quantum Computing in 2024',
-      summary: 'Quantum computers are moving from theoretical concepts to practical tools. Major tech companies are racing to achieve quantum supremacy, with recent breakthroughs indicating that we are on the cusp of solving problems previously thought unsolvable, impacting fields like medicine, finance, and cryptography.',
-      source: 'Tech Chronicle',
-      url: '#',
-    },
-    {
-      title: 'Sustainable Tech: Innovations for a Greener Planet',
-      summary: 'From biodegradable electronics to AI-optimized energy grids, the tech industry is increasingly focusing on sustainability. This article explores the latest innovations designed to reduce the environmental impact of technology, highlighting companies that are leading the charge towards a more eco-friendly future.',
-      source: 'Eco Innovations',
-      url: '#',
-    },
   ];
 
   const [articles] = useState<Article[]>(sampleArticles);
@@ -329,7 +293,6 @@ function Home() {
           <div className="mt-20">
             <Carousel slides={slides} />
           </div>
-
 
         </div>
       </section>
