@@ -110,10 +110,10 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
         <div className="absolute inset-0 pointer-events-none">
           {/* Binary streams */}
           <div className="absolute top-10 left-10 text-blue-400/20 text-xs animate-float-up">
-            01001001 01101110 01101110 01101111
+            01010110 01001001 01010100 01010011
           </div>
           <div className="absolute top-32 right-16 text-cyan-400/30 text-xs animate-float-up" style={{ animationDelay: '2s' }}>
-            01110110 01100001 01110100 01101001
+            01010011 01010011 01000011 01001011
           </div>
           
           {/* Geometric nodes */}
