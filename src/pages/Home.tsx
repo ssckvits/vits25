@@ -4,6 +4,7 @@ import InteractiveHero from '../components/InteractiveHero';
 import EnhancedAboutSection from '../components/EnhancedAboutSection';
 import EnhancedFeedSection from '../components/EnhancedFeedSection';
 import EnhancedGridSection from '../components/EnhancedGridSection';
+import RotatingText from '../components/RotatingText'
 import Dock from '../components/Dock';
 import EnhancedFooter from '../components/EnhancedFooter';
 import ScrollEffects from '../components/ScrollEffects';
@@ -24,29 +25,29 @@ function Home() {
   ];
 
   const achievements = [
-    { 
-      icon: Award, 
-      title: 'ICT Society', 
-      place: "../src/assets/wins/1.jpeg", 
-      description: 'Recognized as the leading ICT society at SSCK' 
+    {
+      icon: Award,
+      title: 'ICT Society',
+      place: "../src/assets/wins/1.jpeg",
+      description: 'Recognized as the leading society at SSCK'
     },
-    { 
-      icon: Users, 
-      title: '500+ Members', 
-      place: "../src/assets/events/1.jpg", 
-      description: 'Growing community of tech enthusiasts and innovators' 
+    {
+      icon: Users,
+      title: '500+ Members',
+      place: "../src/assets/events/1.jpg",
+      description: 'Growing community of tech enthusiasts and innovators'
     },
-    { 
-      icon: Award, 
-      title: '50+ Events', 
-      place: "../src/assets/events/6.jpg", 
-      description: 'Technical workshops, hackathons, and competitions' 
+    {
+      icon: Award,
+      title: '50+ Events',
+      place: "../src/assets/events/6.jpg",
+      description: 'Technical workshops, hackathons, and competitions'
     },
-    { 
-      icon: Award, 
-      title: '100+ Projects', 
-      place: "../src/assets/events/8.jpg", 
-      description: 'Innovative student projects across various domains' 
+    {
+      icon: Award,
+      title: '100+ Projects',
+      place: "../src/assets/events/8.jpg",
+      description: 'Innovative student projects across various domains'
     },
   ];
 
@@ -54,6 +55,20 @@ function Home() {
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       <ScrollEffects />
       <InteractiveHero />
+
+      <RotatingText
+        texts={['React', 'Bits', 'Is', 'Cool!']}
+        mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg "
+        staggerFrom={"last"}
+        initial={{ y: "100%" }}
+        animate={{ y: 0 }}
+        exit={{ y: "-120%" }}
+        staggerDuration={0.025}
+        splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+        transition={{ type: "spring", damping: 30, stiffness: 400 }}
+        rotationInterval={2000}
+      />
+
       <EnhancedAboutSection />
       {/* <EnhancedFeedSection /> */}
 
@@ -84,13 +99,13 @@ function Home() {
                     <achievement.icon className="h-8 w-8 text-background" />
                   </div>
                   <CardTitle className="text-2xl gradient-text">{achievement.title}</CardTitle>
-                    <div className="w-40 md:w-56 mx-auto rounded-2xl mb-4 overflow-hidden" style={{ aspectRatio: '4 / 3' }}>
+                  <div className="w-40 md:w-56 mx-auto rounded-2xl mb-4 overflow-hidden" style={{ aspectRatio: '4 / 3' }}>
                     <img
                       src={achievement.place}
                       alt={achievement.title}
                       className="w-full h-full object-cover object-center"
                     />
-                    </div>
+                  </div>
                   <CardDescription className="text-base mt-2">{achievement.description}</CardDescription>
                 </CardHeader>
               </Card>
@@ -98,6 +113,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+            
 
       <EnhancedGridSection />
       <div className="fixed bottom-0 left-0 w-full flex justify-center z-50 pb-4 pointer-events-none">
