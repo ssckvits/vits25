@@ -229,11 +229,13 @@ function Home() {
     }
   };
 
+  const historySection = useScrollAnimation();
+
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       <ScrollEffects />
       <InteractiveHero />
-
+      
       <RotatingText
         texts={['Innovative', 'Competitive', 'Relentless', 'Collaborative', 'Passionate']}
         mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg "
@@ -294,6 +296,42 @@ function Home() {
             <Carousel slides={slides} />
           </div>
 
+        </div>
+      </section>
+
+      {/* History */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900 relative overflow-hidden">
+        <div className="container-custom">
+          <div ref={historySection.ref} className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-700 ${historySection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="space-y-6">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium">
+                The Messege
+              </div>
+              <h2 className="text-4xl font-bold">
+                The Messege from the <span className="gradient-text">Principal</span>
+              </h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  "I am proud to lead an institution that fosters innovation and technical excellence. 
+                  Our ICT Society exemplifies the spirit of learning, collaboration, and technological 
+                  advancement that we aim to instill in every student. Through various initiatives, workshops, 
+                  and projects, our students are not just learning technology – they're shaping the future of it. 
+                  The achievements of our ICT Society demonstrate that with dedication and the right guidance, our 
+                  students can compete and excel at any level."
+                </p>
+                <p>
+                  - Mr. R. A. A. R. Ranasinghe,<br/> Principal of St. Sylvester's College
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src= "../src/assets/team/1.jpg"
+                alt="Principal of St. Sylvester's College"
+                className="rounded-2xl shadow-2xl w-full h-auto"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
