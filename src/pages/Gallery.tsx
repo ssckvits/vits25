@@ -16,7 +16,7 @@ const Gallery = () => {
     { src: "src/assets/gallery/4.jpeg", title: "NEXORA '25", category: 'Acheivments' },
     //{ src: "src/assets/gallery/9.jpeg", title: 'Sample', category: 'Events' },
     { src: "src/assets/gallery/5.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
-    { src: "src/assets/gallery/6.jpeg", title: "SYNC '23", category: 'Events' },
+    { src: "src/assets/gallery/6.jpeg", title: "SYNC '25", category: 'Events' },
     { src: "src/assets/gallery/7.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
     { src: "src/assets/gallery/8.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
     { src: "src/assets/gallery/10.jpeg", title: '65TH BATTLE OF THE BABES', category: 'Events' },
