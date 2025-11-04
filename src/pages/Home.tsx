@@ -1,5 +1,6 @@
 import { Home as HomeIcon, User, Mail, Calendar, Rocket, Award, Users, Image as ImageIcon } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import InteractiveHero from '../components/InteractiveHero';
 import EnhancedAboutSection from '../components/EnhancedAboutSection';
 import EnhancedFeedSection from '../components/EnhancedFeedSection';
@@ -12,6 +13,14 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 import { Carousel } from '../components/Carousel';
 
+import NewsCard from '../components/NewsCard';
+
+interface Article {
+  title: string;
+  summary: string;
+  source: string;
+  url: string;
+}
 
 function Home() {
 
@@ -86,6 +95,176 @@ function Home() {
     },
   ];
 
+  const sampleArticles: Article[] = [
+    {
+      title: 'Gemini 2.5 Pro: A Leap in Multimodal AI',
+      summary: 'Google\'s latest model, Gemini 2.5 Pro, showcases groundbreaking capabilities in understanding and processing text, images, and audio simultaneously. This new architecture promises to revolutionize AI applications, from creative content generation to complex data analysis, setting a new benchmark for the industry.',
+      source: 'AI Today',
+      url: '#',
+    },
+    {
+      title: 'The Rise of Quantum Computing in 2024',
+      summary: 'Quantum computers are moving from theoretical concepts to practical tools. Major tech companies are racing to to achieve quantum supremacy, with recent breakthroughs indicating that we are on the cusp of solving problems previously thought unsolvable, impacting fields like medicine, finance, and cryptography.',
+      source: 'Tech Chronicle',
+      url: '#',
+    },
+    {
+      title: 'Sustainable Tech: Innovations for a Greener Planet',
+      summary: 'From biodegradable electronics to AI-optimized energy grids, the tech industry is increasingly focusing on sustainability. This article explores the latest innovations designed to reduce the environmental impact of technology, highlighting companies that are leading the charge towards a more eco-friendly future.',
+      source: 'Eco Innovations',
+      url: '#',
+    },
+    {
+      title: 'Gemini 2.5 Pro: A Leap in Multimodal AI',
+      summary: 'Google\'s latest model, Gemini 2.5 Pro, showcases groundbreaking capabilities in understanding and processing text, images, and audio simultaneously. This new architecture promises to revolutionize AI applications, from creative content generation to complex data analysis, setting a new benchmark for the industry.',
+      source: 'AI Today',
+      url: '#',
+    },
+    {
+      title: 'The Rise of Quantum Computing in 2024',
+      summary: 'Quantum computers are moving from theoretical concepts to practical tools. Major tech companies are racing to achieve quantum supremacy, with recent breakthroughs indicating that we are on the cusp of solving problems previously thought unsolvable, impacting fields like medicine, finance, and cryptography.',
+      source: 'Tech Chronicle',
+      url: '#',
+    },
+    {
+      title: 'Sustainable Tech: Innovations for a Greener Planet',
+      summary: 'From biodegradable electronics to AI-optimized energy grids, the tech industry is increasingly focusing on sustainability. This article explores the latest innovations designed to reduce the environmental impact of technology, highlighting companies that are leading the charge towards a more eco-friendly future.',
+      source: 'Eco Innovations',
+      url: '#',
+    },
+    {
+      title: 'Gemini 2.5 Pro: A Leap in Multimodal AI',
+      summary: 'Google\'s latest model, Gemini 2.5 Pro, showcases groundbreaking capabilities in understanding and processing text, images, and audio simultaneously. This new architecture promises to revolutionize AI applications, from creative content generation to complex data analysis, setting a new benchmark for the industry.',
+      source: 'AI Today',
+      url: '#',
+    },
+    {
+      title: 'The Rise of Quantum Computing in 2024',
+      summary: 'Quantum computers are moving from theoretical concepts to practical tools. Major tech companies are racing to achieve quantum supremacy, with recent breakthroughs indicating that we are on the cusp of solving problems previously thought unsolvable, impacting fields like medicine, finance, and cryptography.',
+      source: 'Tech Chronicle',
+      url: '#',
+    },
+    {
+      title: 'Sustainable Tech: Innovations for a Greener Planet',
+      summary: 'From biodegradable electronics to AI-optimized energy grids, the tech industry is increasingly focusing on sustainability. This article explores the latest innovations designed to reduce the environmental impact of technology, highlighting companies that are leading the charge towards a more eco-friendly future.',
+      source: 'Eco Innovations',
+      url: '#',
+    },
+  ];
+
+  const [articles] = useState<Article[]>(sampleArticles);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const dragState = useRef({
+    isDragging: false,
+    startX: 0,
+    scrollLeft: 0,
+    hasDragged: false,
+  });
+  const autoScrollIntervalRef = useRef<number | null>(null);
+  const isHoveringRef = useRef(false);
+
+  const handleToggleExpand = (index: number) => {
+    setExpandedIndex(prevIndex => (prevIndex === index ? null : index));
+  };
+
+  const handleCollapse = () => {
+    setExpandedIndex(null);
+  };
+
+  const findCardIndex = (target: EventTarget | null): number | null => {
+    let element = target as HTMLElement | null;
+    while (element && element !== scrollContainerRef.current) {
+      if (element.dataset.index) {
+        return parseInt(element.dataset.index, 10);
+      }
+      element = element.parentElement;
+    }
+    return null;
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!scrollContainerRef.current) return;
+    dragState.current.isDragging = true;
+    dragState.current.startX = e.pageX - scrollContainerRef.current.offsetLeft;
+    dragState.current.scrollLeft = scrollContainerRef.current.scrollLeft;
+    dragState.current.hasDragged = false;
+    scrollContainerRef.current.classList.add('cursor-grabbing');
+    scrollContainerRef.current.classList.remove('cursor-grab');
+  };
+
+  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!dragState.current.isDragging) return;
+
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.classList.remove('cursor-grabbing');
+      scrollContainerRef.current.classList.add('cursor-grab');
+    }
+
+    const wasClick = !dragState.current.hasDragged;
+    dragState.current.isDragging = false;
+
+    if (wasClick) {
+      const cardIndex = findCardIndex(e.target);
+      if (cardIndex !== null) {
+        handleToggleExpand(cardIndex);
+      }
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!dragState.current.isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = x - dragState.current.startX;
+
+    if (Math.abs(walk) > 5) { // Threshold to register as a drag
+      dragState.current.hasDragged = true;
+    }
+
+    scrollContainerRef.current.scrollLeft = dragState.current.scrollLeft - walk;
+  };
+
+  const stopAutoScroll = useCallback(() => {
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+      autoScrollIntervalRef.current = null;
+    }
+  }, []);
+
+  const startAutoScroll = useCallback(() => {
+    stopAutoScroll();
+    autoScrollIntervalRef.current = window.setInterval(() => {
+      if (!isHoveringRef.current && !dragState.current.isDragging && scrollContainerRef.current) {
+        const container = scrollContainerRef.current;
+        const maxScroll = container.scrollWidth / 2;
+        if (container.scrollLeft >= maxScroll - 1) {
+          container.scrollLeft = 0;
+        } else {
+          container.scrollLeft += 0.5;
+        }
+      }
+    }, 25);
+  }, [stopAutoScroll]);
+
+  useEffect(() => {
+    startAutoScroll();
+    return () => stopAutoScroll();
+  }, [articles, startAutoScroll, stopAutoScroll]);
+
+  const handleMouseEnter = () => { isHoveringRef.current = true; };
+  const handleMouseLeave = () => {
+    isHoveringRef.current = false;
+    if (dragState.current.isDragging) {
+      dragState.current.isDragging = false;
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.classList.remove('cursor-grabbing');
+        scrollContainerRef.current.classList.add('cursor-grab');
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       <ScrollEffects />
@@ -151,6 +330,53 @@ function Home() {
             <Carousel slides={slides} />
           </div>
 
+
+        </div>
+      </section>
+
+      {/* News */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900 relative overflow-hidden">
+        <h2 className="text-4xl text-center font-bold mb-4">News</h2>
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-4">
+          Stay updated with the latest news.
+        </p>
+
+        <div
+          ref={scrollContainerRef}
+          className="w-full overflow-x-auto cursor-grab scrollbar-hide"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          aria-roledescription="carousel"
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+        >
+          <div className="flex py-4 space-x-6">
+            {articles.map((article, index) => (
+              <NewsCard
+                key={`a-${index}`}
+                article={article}
+                isExpanded={expandedIndex === index}
+                data-index={index}
+                onMouseLeave={handleCollapse}
+              />
+            ))}
+            {/* Duplicate for seamless scroll */}
+            {articles.map((article, index) => {
+              const uniqueIndex = index + articles.length;
+              return (
+                <NewsCard
+                  key={`b-${uniqueIndex}`}
+                  article={article}
+                  isExpanded={expandedIndex === uniqueIndex}
+                  data-index={uniqueIndex}
+                  onMouseLeave={handleCollapse}
+                  aria-hidden="true"
+                />
+              );
+            })}
+          </div>
         </div>
       </section>
 
