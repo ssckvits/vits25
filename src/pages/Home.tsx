@@ -10,6 +10,8 @@ import EnhancedFooter from '../components/EnhancedFooter';
 import ScrollEffects from '../components/ScrollEffects';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
+import { Carousel } from '../components/Carousel';
+
 
 function Home() {
 
@@ -24,7 +26,7 @@ function Home() {
     { icon: <Mail className="h-7 w-7 text-white" />, label: 'Contact', onClick: () => window.location.href = '/contact' },
   ];
 
-  const achievements = [
+  const impacts = [
     {
       icon: Award,
       title: 'ICT Society',
@@ -48,6 +50,39 @@ function Home() {
       title: '100+ Projects',
       place: "../src/assets/events/8.jpg",
       description: 'Innovative student projects across various domains'
+    },
+  ];
+
+  const slides = [
+    {
+      id: 1,
+      imageUrl: '../src/assets/events/6.jpg',
+      title: 'Journey Through the Mountains',
+      description: 'Experience the breathtaking views and serene landscapes of the high peaks.'
+    },
+    {
+      id: 2,
+      imageUrl: '../src/assets/events/8.jpg',
+      title: 'The Calm of the Lake',
+      description: 'Discover tranquility by the still waters, reflecting the endless sky.'
+    },
+    {
+      id: 3,
+      imageUrl: '../src/assets/events/5.jpg',
+      title: 'A Walk with a Friend',
+      description: 'Cherish simple moments and loyal companionship on a scenic path.'
+    },
+    {
+      id: 4,
+      imageUrl: '../src/assets/events/2.jpg',
+      title: 'Architectural Wonders',
+      description: 'Explore the intricate designs and timeless beauty of historic castles.'
+    },
+    {
+      id: 5,
+      imageUrl: '../src/assets/events/1.jpg',
+      title: 'Coastal Adventures',
+      description: 'Feel the ocean breeze and listen to the rhythm of the waves on a rocky shore.'
     },
   ];
 
@@ -86,7 +121,7 @@ function Home() {
           </div>
 
           <div className={`grid md:grid-cols-4 gap-6 transition-all duration-700 ${achievementsSection.isVisible ? 'opacity-100' : 'opacity-0'}`}>
-            {achievements.map((achievement, index) => (
+            {impacts.map((achievement, index) => (
               <Card
                 key={index}
                 className="bg-card border-border card-hover text-center"
@@ -111,10 +146,15 @@ function Home() {
               </Card>
             ))}
           </div>
+
+          <div className="mt-20">
+            <Carousel slides={slides} />
+          </div>
+
         </div>
       </section>
 
-            
+
 
       <EnhancedGridSection />
       <div className="fixed bottom-0 left-0 w-full flex justify-center z-50 pb-4 pointer-events-none">
