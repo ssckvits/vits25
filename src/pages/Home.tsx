@@ -154,8 +154,6 @@ function Home() {
         </div>
       </section>
 
-
-
       <EnhancedGridSection />
       <div className="fixed bottom-0 left-0 w-full flex justify-center z-50 pb-4 pointer-events-none">
         <div className="pointer-events-auto">
