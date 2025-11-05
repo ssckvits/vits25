@@ -333,9 +333,9 @@ function Home() {
             </div>
             <div>
               <img
-                src="../src/assets/principal.jpeg"
-                alt="Principal of St. Sylvester's College"
-                className="rounded-2xl shadow-2xl w-full h-auto"
+              src="../src/assets/principal.jpeg"
+              alt="Principal of St. Sylvester's College"
+              className="rounded-2xl shadow-2xl w-3/4 h-auto"
               />
             </div>
           </div>
