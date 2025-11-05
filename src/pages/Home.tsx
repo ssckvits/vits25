@@ -242,7 +242,7 @@ function Home() {
           <h2 className="text-3xl font-bold">Creative</h2>
           <div className="w-3"></div>
           <RotatingText
-            texts={['Innovative', 'Competitive', 'Relentless', 'Collaborative', 'Passionate']}
+            texts={[]}
             mainClassName="px-4 sm:px-4 md:px-6 bg-cyan-300 text-black overflow-hidden py-1 sm:py-2 md:py-3 justify-center rounded-lg font-bold text-3xl"
             staggerFrom={"last"}
             initial={{ y: "100%" }}
@@ -333,7 +333,7 @@ function Home() {
             </div>
             <div>
               <img
-                src="../src/assets/team/1.jpg"
+                src="../src/assets/principal.jpeg"
                 alt="Principal of St. Sylvester's College"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
