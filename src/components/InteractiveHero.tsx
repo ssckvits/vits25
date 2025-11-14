@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import vitsVideo from '../assets/Vits Logo 2(2).webm';
 
 interface InteractiveHeroProps {
   text?: string;
@@ -53,14 +54,14 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
         });
       }, index * 150);
     });
-    
+
     setTimeout(() => setIsClicked(false), 2000);
   };
 
   const getLetterStyle = (index: number) => {
     const animationTime = letterAnimations[index];
     const isAnimating = animationTime > 0 && Date.now() - animationTime < 1500;
-    
+
     return {
       transform: `
         rotateX(${mousePosition.y * 0.8}deg) 
@@ -78,32 +79,26 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
   };
 
   return (
-    <div 
+    <div
       className={`relative w-full h-screen overflow-hidden flex items-center justify-center ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
     >
-      {/* Aurora Gradient Background */}
-      {/* <div className="absolute inset-0 opacity-90">
-        <div 
-          className="absolute inset-0 animate-aurora-slow"
-          style={{
-            background: `
-              conic-gradient(from 0deg at 50% 50%, 
-                rgba(0, 0, 0, 1) 0deg,
-                rgba(29, 78, 216, 0.3) 60deg,
-                rgba(59, 130, 246, 0.4) 120deg,
-                rgba(6, 182, 212, 0.3) 180deg,
-                rgba(139, 92, 246, 0.2) 240deg,
-                rgba(29, 78, 216, 0.3) 300deg,
-                rgba(0, 0, 0, 1) 360deg
-              )
-            `
-          }}
-        />
-        <div className="absolute inset-0 bg-black/60" />
-      </div> */}
+
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
+        style={{
+          animationDelay: '2.5s',
+        }}
+      >
+        <source src={vitsVideo} type="video/webm" />
+      </video>
 
       {/* Floating Particles */}
       {showParticles && (
@@ -115,16 +110,16 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
           <div className="absolute top-32 right-16 text-cyan-400/30 text-xs animate-float-up" style={{ animationDelay: '2s' }}>
             01010011 01010011 01000011 01001011
           </div>
-          
+
           {/* Geometric nodes */}
           <div className="absolute top-1/4 left-1/5 w-4 h-4 border border-blue-400/30 rotate-45 animate-spin-slow" />
           <div className="absolute bottom-1/3 right-1/4 w-6 h-6 border border-cyan-400/40 animate-pulse" />
           <div className="absolute top-2/3 left-1/3 w-3 h-3 bg-white/20 animate-ping" />
-          
+
           {/* Light rays */}
           <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-blue-400/40 to-transparent animate-fade-pulse" />
           <div className="absolute top-1/4 right-0 h-px w-32 bg-gradient-to-l from-cyan-400/40 to-transparent animate-fade-pulse" style={{ animationDelay: '1s' }} />
-          
+
           {/* Fog particles */}
           <div className="absolute bottom-20 left-20 w-32 h-32 rounded-full bg-blue-400/5 blur-xl animate-float-gentle" />
           <div className="absolute top-1/3 right-20 w-40 h-40 rounded-full bg-cyan-400/5 blur-xl animate-float-gentle" style={{ animationDelay: '3s' }} />
@@ -134,14 +129,13 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
       {/* Main Content */}
       <div className="relative text-center z-10">
         {/* Interactive 3D Text */}
-        <div 
+        <div
           className="relative perspective-1000 cursor-pointer"
           onClick={handleTextClick}
         >
-          <div 
-            className={`font-bold text-8xl md:text-9xl select-none transition-all duration-500 flex justify-center ${
-              isHovered ? 'scale-105' : 'scale-100'
-            }`}
+          <div
+            className={`font-bold text-8xl md:text-9xl select-none transition-all duration-500 flex justify-center ${isHovered ? 'scale-105' : 'scale-100'
+              }`}
             style={{
               fontFamily: "'mechfire', system-ui, sans-serif",
               transformStyle: 'preserve-3d',
@@ -163,7 +157,7 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
           </div>
 
           {/* 3D Letter Shadows */}
-          <div 
+          <div
             className="absolute inset-0 font-bold text-8xl md:text-9xl select-none pointer-events-none flex justify-center"
             style={{
               fontFamily: "'mechfire', system-ui, sans-serif",
@@ -190,7 +184,7 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
             ))}
           </div>
 
-          <div 
+          <div
             className="absolute inset-0 font-bold text-8xl md:text-9xl select-none pointer-events-none flex justify-center"
             style={{
               fontFamily: "'mechfire', system-ui, sans-serif",
@@ -259,11 +253,10 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
             {taglines.map((tagline, index) => (
               <p
                 key={index}
-                className={`absolute inset-0 text-xl md:text-2xl font-medium tracking-wide transition-all duration-1000 ${
-                  index === currentTagline 
-                    ? 'opacity-100 transform translate-y-0' 
-                    : 'opacity-0 transform translate-y-full'
-                }`}
+                className={`absolute inset-0 text-xl md:text-2xl font-medium tracking-wide transition-all duration-1000 ${index === currentTagline
+                  ? 'opacity-100 transform translate-y-0'
+                  : 'opacity-0 transform translate-y-full'
+                  }`}
                 style={{
                   color: '#e2e8f0',
                   fontFamily: "'JetBrains Mono', monospace",

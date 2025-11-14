@@ -197,16 +197,19 @@ function Home() {
     }
   }, []);
 
-  const startAutoScroll = useCallback(() => {
+const startAutoScroll = useCallback(() => {
     stopAutoScroll();
     autoScrollIntervalRef.current = window.setInterval(() => {
       if (!isHoveringRef.current && !dragState.current.isDragging && scrollContainerRef.current) {
         const container = scrollContainerRef.current;
-        const maxScroll = container.scrollWidth / 2;
-        if (container.scrollLeft >= maxScroll - 1) {
-          container.scrollLeft = 0;
+        // The content is duplicated, so we check against half the scroll width.
+        const originalContentWidth = container.scrollWidth / 2;
+
+        if (container.scrollLeft >= originalContentWidth) {
+            // When we scroll past the original content, reset to the beginning smoothly
+            container.scrollLeft -= originalContentWidth;
         } else {
-          container.scrollLeft += 0.5;
+            container.scrollLeft += 0.5; // Scroll speed
         }
       }
     }, 25);
@@ -237,7 +240,7 @@ function Home() {
       <InteractiveHero />
 
       {/* Rotating Text */}
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <div className="min-w-[300px] h-24 flex items-center mt-10 mb-16">
           <h2 className="text-3xl font-bold">Creative</h2>
           <div className="w-3"></div>
@@ -254,7 +257,7 @@ function Home() {
             rotationInterval={2000}
           />
         </div>
-      </div>
+      </div> */}
 
       <EnhancedAboutSection />
       {/* <EnhancedFeedSection /> */}
@@ -351,8 +354,8 @@ function Home() {
 
         <div
           ref={scrollContainerRef}
-          className="w-full overflow-x-auto cursor-grab scrollbar-hide"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="w-full overflow-x-auto no-scrollbar cursor-grab"
+          // style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           aria-roledescription="carousel"
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
@@ -374,9 +377,9 @@ function Home() {
             {articles.map((article, index) => {
               const uniqueIndex = index + articles.length;
               return (
-                <NewsCard
-                  key={`b-${uniqueIndex}`}
-                  article={article}
+                <NewsCard 
+                  key={`b-${uniqueIndex}`} 
+                  article={article} 
                   isExpanded={expandedIndex === uniqueIndex}
                   data-index={uniqueIndex}
                   onMouseLeave={handleCollapse}
