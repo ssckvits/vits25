@@ -136,10 +136,10 @@ const EnhancedFooter: React.FC = () => {
                     className="h-10 w-auto rounded shadow-sm group-hover:shadow-md transition-shadow"
                     loading="lazy"
                     decoding="async"
-                    onError={(e) => {
-                      e.currentTarget.src = '/src/assets/fallback.png';
-                      console.log('Failed to load crest image');
-                    }}
+                    // onError={(e) => {
+                    //   e.currentTarget.src = '/src/assets/fallback.png';
+                    //   console.log('Failed to load crest image');
+                    // }}
                   />
                   <img
                     src="/src/assets/Vitslogo.png"
@@ -147,10 +147,10 @@ const EnhancedFooter: React.FC = () => {
                     className="h-8 w-auto"
                     loading="lazy"
                     decoding="async"
-                    onError={(e) => {
-                      e.currentTarget.src = '/src/assets/fallback.png';
-                      console.log('Failed to load logo image');
-                    }}
+                    // onError={(e) => {
+                    //   e.currentTarget.src = '/src/assets/fallback.png';
+                    //   console.log('Failed to load logo image');
+                    // }}
                   />
                   <span className="sr-only">Vester's ICT Society</span>
                 </Link>
