@@ -93,9 +93,6 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
         playsInline
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
-        style={{
-          animationDelay: '2.5s',
-        }}
       >
         <source src={vitsVideo} type="video/webm" />
       </video>
@@ -276,7 +273,7 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
       {/* Interactive glow rings */}
       {isHovered && (
         <div className="absolute inset-0 pointer-events-none z-0">
-          <div
+          {/* <div
             className="absolute border border-blue-400/30 rounded-full animate-ping"
             style={{
               left: '50%',
@@ -285,7 +282,7 @@ const InteractiveHero: React.FC<InteractiveHeroProps> = ({
               width: '600px',
               height: '600px',
             }}
-          />
+          /> */}
           <div
             className="absolute border border-cyan-400/20 rounded-full animate-ping"
             style={{

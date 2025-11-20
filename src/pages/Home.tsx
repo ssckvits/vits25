@@ -309,8 +309,8 @@ const startAutoScroll = useCallback(() => {
         </div>
       </section>
 
-      {/* History */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900 relative overflow-hidden">
+      {/* Principal */}
+      {/* <section className="py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900 relative overflow-hidden">
         <div className="container-custom">
           <div ref={historySection.ref} className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-700 ${historySection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="space-y-6">
@@ -343,10 +343,10 @@ const startAutoScroll = useCallback(() => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* News */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900 relative overflow-hidden">
+      {/* <section className="py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900 relative overflow-hidden">
         <h2 className="text-4xl text-center font-bold mb-4">News</h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-4">
           Stay updated with the latest news.
@@ -372,9 +372,9 @@ const startAutoScroll = useCallback(() => {
                 data-index={index}
                 onMouseLeave={handleCollapse}
               />
-            ))}
+            ))} */}
             {/* Duplicate for seamless scroll */}
-            {articles.map((article, index) => {
+            {/* {articles.map((article, index) => {
               const uniqueIndex = index + articles.length;
               return (
                 <NewsCard 
@@ -389,7 +389,7 @@ const startAutoScroll = useCallback(() => {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <EnhancedGridSection />
       <div className="fixed bottom-0 left-0 w-full flex justify-center z-50 pb-4 pointer-events-none">

@@ -97,19 +97,19 @@ const Contact = () => {
     },
     {
       icon: Phone,
-      title: 'President',
+      title: 'President - Maleesha',
       content: '+94 76 988 6323',
       link: 'tel:+94769886323',
     },
     {
       icon: Phone,
-      title: 'Secretary',
+      title: 'Secretary - Gayansha',
       content: '+94 76 255 6159',
       link: 'tel:+94762556159',
     },
     {
       icon: Phone,
-      title: 'Media Coordinator',
+      title: 'Media Coordinator - Navod',
       content: '+94 75 086 1917',
       link: 'tel:+94750861917',
     },
@@ -276,16 +276,12 @@ const Contact = () => {
             </CardHeader>
             <CardContent className="space-y-2">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Monday - Friday</span>
-                <span className="font-medium">9:00 AM - 5:00 PM</span>
+                <span className="text-muted-foreground">Week Days</span>
+                <span className="font-medium">7:30 AM - 2:00 PM</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Saturday</span>
-                <span className="font-medium">10:00 AM - 2:00 PM</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Sunday</span>
-                <span className="font-medium">Closed</span>
+                <span className="text-muted-foreground">Weekends</span>
+                <span className="font-medium">Reach us out on Email or WhatsApp</span>
               </div>
             </CardContent>
           </Card>
