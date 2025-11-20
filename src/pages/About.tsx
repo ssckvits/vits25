@@ -3,6 +3,7 @@ import { Target, Eye, Award, Users, Home as HomeIcon, User, Mail, Calendar, Rock
 import EnhancedFooter from '@/components/EnhancedFooter';
 import Dock from '@/components/Dock';
 import aboutTeam from '@/assets/St.Sylvester.jpg';
+import avatar from '@/assets/Avatar.gif';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import Leadership from '@/components/Leadership';
 
@@ -15,49 +16,49 @@ const About = () => {
     {
       name: 'Maleesha Sandun',
       role: 'President',
-      image: '../src/assets/rem/Maleesha.png',
+      image: '../src/assets/Committee/Maleesha.png',
       social: { linkedin: 'https://www.linkedin.com/in/maleesha-miyuranga-b2856538b', email: 'hgmsmiyuranga@gmail.com' },
     },
     {
       name: 'Gayansha Thameera',
       role: 'Secretary',
-      image: '../src/assets/rem/Gayansha.jpg',
+      image: '../src/assets/Committee/Gayansha.jpg',
       social: { linkedin: 'https://lk.linkedin.com/in/gayansha-rathnayake-527182252', email: 'gayansha.t.r@gmail.com' },
     },
     {
       name: 'Aashir Ahmed',
       role: 'Treasurer',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
       social: { linkedin: '', email: '' },
     },
     {
       name: 'Navod Niroshana',
       role: 'Media Coordinator',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
       social: { linkedin: 'https://lk.linkedin.com/in/navodn', email: 'navodnirooshana@gmail.com' },
     },
     {
       name: 'Januda Hettiarachchi',
       role: 'Vice President',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
       social: { linkedin: '', email: '' },
     },
     {
       name: 'S. Sharveshar',
       role: 'Assistant Secretary',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
       social: { linkedin: '', email: '' },
     },
     {
       name: 'Suranjeewa Perera',
       role: 'Chief Organizer',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
       social: { linkedin: '', email: '' },
     },
     {
       name: 'Kavinda Dahanayake',
       role: 'Committee Leader',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
       social: { linkedin: '', email: '' },
     },
   ];
@@ -71,31 +72,31 @@ const About = () => {
   const committeeMembers = [
     {
       name: 'Supun Wasalage',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
     },
     {
       name: 'Pasindu Herath',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
     },
     {
       name: 'Himaru Thanthirige',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
     },
     {
       name: 'Ashen Zavier',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
     },
     {
       name: 'Pramod Udagamagedara',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
     },
     {
       name: 'Thejan Nawinna',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
     },
     {
       name: 'AD',
-      image: '../src/assets/vitslogo.png',
+      image: avatar,
     },
   ];
 

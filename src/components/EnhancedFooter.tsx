@@ -131,7 +131,7 @@ const EnhancedFooter: React.FC = () => {
 
                 <Link to="/" className="flex items-center space-x-3 group">
                   <img
-                    src="/src/assets/crest.png"
+                    src="/src/assets/Crest.png"
                     alt="Vester School Crest"
                     className="h-10 w-auto rounded shadow-sm group-hover:shadow-md transition-shadow"
                     loading="lazy"
@@ -142,7 +142,7 @@ const EnhancedFooter: React.FC = () => {
                     }}
                   />
                   <img
-                    src="/src/assets/vitslogo.png"
+                    src="/src/assets/Vitslogo.png"
                     alt="VITS logo"
                     className="h-8 w-auto"
                     loading="lazy"
@@ -245,11 +245,9 @@ const EnhancedFooter: React.FC = () => {
                 © 2025 VITS - ICT Society of St. Sylvester's College. All rights reserved.
               </div>
               <div className="text-gray-400 text-sm flex items-center space-x-4">
-                {/* <span>Made with</span>
+                <span>Made with</span>
                 <span className="text-red-400 animate-pulse">❤️</span>
-                <span>by the VITS Team</span> */}
-
-                <span>Made by the VITS Team.</span>
+                <span>by the VITS Team</span>
 
               </div>
             </div>

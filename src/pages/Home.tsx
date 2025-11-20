@@ -5,7 +5,6 @@ import InteractiveHero from '../components/InteractiveHero';
 import EnhancedAboutSection from '../components/EnhancedAboutSection';
 import EnhancedFeedSection from '../components/EnhancedFeedSection';
 import EnhancedGridSection from '../components/EnhancedGridSection';
-import RotatingText from '../components/RotatingText'
 import Dock from '../components/Dock';
 import EnhancedFooter from '../components/EnhancedFooter';
 import ScrollEffects from '../components/ScrollEffects';
@@ -39,25 +38,25 @@ function Home() {
     {
       icon: Award,
       title: 'ICT Society',
-      place: "../src/assets/wins/1.jpeg",
+      place: "../src/assets/Wins/W1.jpeg",
       description: 'Recognized as the leading society at SSCK'
     },
     {
       icon: Users,
       title: '500+ Members',
-      place: "../src/assets/events/1.jpg",
+      place: "../src/assets/Events/E1.jpg",
       description: 'Growing community of tech enthusiasts and innovators'
     },
     {
       icon: Award,
       title: '50+ Events',
-      place: "../src/assets/events/6.jpg",
+      place: "../src/assets/Events/E6.jpg",
       description: 'Technical workshops, hackathons, and competitions'
     },
     {
       icon: Award,
       title: '100+ Projects',
-      place: "../src/assets/events/8.jpg",
+      place: "../src/assets/Events/E8.jpg",
       description: 'Innovative student projects across various domains'
     },
   ];
@@ -65,31 +64,31 @@ function Home() {
   const slides = [
     {
       id: 1,
-      imageUrl: '../src/assets/events/6.jpg',
+      imageUrl: '../src/assets/Events/E6.jpg',
       title: 'Journey Through the Mountains',
       description: 'Experience the breathtaking views and serene landscapes of the high peaks.'
     },
     {
       id: 2,
-      imageUrl: '../src/assets/events/8.jpg',
+      imageUrl: '../src/assets/Events/E8.jpg',
       title: 'The Calm of the Lake',
       description: 'Discover tranquility by the still waters, reflecting the endless sky.'
     },
     {
       id: 3,
-      imageUrl: '../src/assets/events/5.jpg',
+      imageUrl: '../src/assets/Events/E5.jpg',
       title: 'A Walk with a Friend',
       description: 'Cherish simple moments and loyal companionship on a scenic path.'
     },
     {
       id: 4,
-      imageUrl: '../src/assets/events/2.jpg',
+      imageUrl: '../src/assets/Events/E2.jpg',
       title: 'Architectural Wonders',
       description: 'Explore the intricate designs and timeless beauty of historic castles.'
     },
     {
       id: 5,
-      imageUrl: '../src/assets/events/1.jpg',
+      imageUrl: '../src/assets/Events/E1.jpg',
       title: 'Coastal Adventures',
       description: 'Feel the ocean breeze and listen to the rhythm of the waves on a rocky shore.'
     },

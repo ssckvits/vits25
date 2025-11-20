@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { X, Home as HomeIcon, User, Mail, Calendar, Rocket, Image as ImageIcon } from 'lucide-react';
 import EnhancedFooter from '@/components/EnhancedFooter';
 import Dock from '@/components/Dock';
-import event2 from '@/assets/event-2.jpg';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Gallery = () => {
@@ -10,21 +9,21 @@ const Gallery = () => {
   const gallerySection = useScrollAnimation();
 
   const photos = [
-    { src: "src/assets/gallery/1.jpeg", title: "NETVORA '25", category: 'Events' },
-    { src: "src/assets/gallery/2.jpeg", title: "NEXNOVA '25", category: 'Events' },
-    { src: "src/assets/gallery/3.jpeg", title: "NEXNOVA '24", category: 'Events' },
-    { src: "src/assets/gallery/4.jpeg", title: "NEXORA '25", category: 'Acheivments' },
-    //{ src: "src/assets/gallery/9.jpeg", title: 'Sample', category: 'Events' },
-    { src: "src/assets/gallery/5.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
-    { src: "src/assets/gallery/6.jpeg", title: "SYNC '25", category: 'Events' },
-    { src: "src/assets/gallery/7.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
-    { src: "src/assets/gallery/8.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
-    { src: "src/assets/gallery/10.jpeg", title: '65TH BATTLE OF THE BABES', category: 'Events' },
-    { src: "src/assets/gallery/11.jpeg", title: '65TH BATTLE OF THE BABES', category: 'Events' },
-    { src: "src/assets/gallery/12.jpeg", title: '#', category: 'Events' },
-    { src: "src/assets/gallery/13.jpeg", title: 'PRIZE GIVING 2025', category: 'Events' },
-    { src: "src/assets/gallery/14.jpeg", title: 'UOP SCHOOL WEB DEVELOPMENT WORKSHOP', category: 'Events' },
-    { src: "src/assets/gallery/15.jpeg", title: "CYBERNETICS '25", category: 'Events' },
+    { src: "src/assets/Gallery/G1.jpeg", title: "NETVORA '25", category: 'Events' },
+    { src: "src/assets/Gallery/G2.jpeg", title: "NEXNOVA '25", category: 'Events' },
+    { src: "src/assets/Gallery/G3.jpeg", title: "NEXNOVA '24", category: 'Events' },
+    { src: "src/assets/Gallery/G4.jpeg", title: "NEXORA '25", category: 'Acheivments' },
+    //{ src: "src/assets/Gallery/G9.jpeg", title: 'Sample', category: 'Events' },
+    { src: "src/assets/Gallery/G5.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
+    { src: "src/assets/Gallery/G6.jpeg", title: "SYNC '25", category: 'Events' },
+    { src: "src/assets/Gallery/G7.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
+    { src: "src/assets/Gallery/G8.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
+    { src: "src/assets/Gallery/G10.jpeg", title: '65TH BATTLE OF THE BABES', category: 'Events' },
+    { src: "src/assets/Gallery/G11.jpeg", title: '65TH BATTLE OF THE BABES', category: 'Events' },
+    { src: "src/assets/Gallery/G12.jpeg", title: '#', category: 'Events' },
+    { src: "src/assets/Gallery/G13.jpeg", title: 'PRIZE GIVING 2025', category: 'Events' },
+    { src: "src/assets/Gallery/G14.jpeg", title: 'UOP SCHOOL WEB DEVELOPMENT WORKSHOP', category: 'Events' },
+    { src: "src/assets/Gallery/G15.jpeg", title: "CYBERNETICS '25", category: 'Events' },
 
   ];
 
