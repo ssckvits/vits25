@@ -271,7 +271,7 @@ const startAutoScroll = useCallback(() => {
             </div>
             <h2 className="text-4xl font-bold mb-4">Our Impact</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Highlights of our journey and accomplishments
+              Highlights of our journey and accomplishments.
             </p>
           </div>
 
