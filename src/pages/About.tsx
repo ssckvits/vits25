@@ -7,8 +7,8 @@ import avatar from '@/assets/Avatar.gif';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import Leadership from '@/components/Leadership';
 
-import Maleesha from '../src/assets/Committee/Maleesha.png';
-import Gayansha from '../src/assets/Committee/Gayansha.png';
+import Maleesha from '@/assets/Committee/Maleesha.png';
+import Gayansha from '@/assets/Committee/Gayansha.jpg';
 
 const About = () => {
   const missionVision = useScrollAnimation();
