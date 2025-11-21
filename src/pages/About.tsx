@@ -7,6 +7,9 @@ import avatar from '@/assets/Avatar.gif';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import Leadership from '@/components/Leadership';
 
+import Maleesha from '../src/assets/Committee/Maleesha.png';
+import Gayansha from '../src/assets/Committee/Gayansha.png';
+
 const About = () => {
   const missionVision = useScrollAnimation();
   const historySection = useScrollAnimation();
@@ -16,13 +19,13 @@ const About = () => {
     {
       name: 'Maleesha Sandun',
       role: 'President',
-      image: '../src/assets/Committee/Maleesha.png',
+      image: Maleesha,
       social: { linkedin: 'https://www.linkedin.com/in/maleesha-miyuranga-b2856538b', email: 'hgmsmiyuranga@gmail.com' },
     },
     {
       name: 'Gayansha Thameera',
       role: 'Secretary',
-      image: '../src/assets/Committee/Gayansha.jpg',
+      image: Gayansha,
       social: { linkedin: 'https://lk.linkedin.com/in/gayansha-rathnayake-527182252', email: 'gayansha.t.r@gmail.com' },
     },
     {

@@ -3,10 +3,18 @@ import { Button } from '@/components/ui/button';
 import { Clock, MapPin, Users, Home as HomeIcon, User, Mail, Calendar, Rocket, Image as ImageIcon } from 'lucide-react';
 import EnhancedFooter from '@/components/EnhancedFooter';
 import Dock from '@/components/Dock';
-import event1 from '@/assets/event-1.jpg';
-import event2 from '@/assets/event-2.jpg';
-import event3 from '@/assets/event-3.jpg';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+import event1 from '@/assets/Events/E1.jpg';
+import event2 from '@/assets/Events/E2.jpg';
+import event3 from '@/assets/Events/E3.jpg';
+import event4 from '@/assets/Events/E4.jpg';
+import event5 from '@/assets/Events/E5.jpg';
+import event6 from '@/assets/Events/E6.jpg';
+import event7 from '@/assets/Events/E7.jpg';
+import event8 from '@/assets/Events/E8.jpg';
+import event9 from '@/assets/Events/E9.jpg';
+import event10 from '@/assets/Events/E10.jpg';
 
 const Events = () => {
   const upcomingSection = useScrollAnimation();
@@ -47,56 +55,56 @@ const Events = () => {
       title: 'NEXNOVA` 24',
       date: 'February 07, 2025',
       attendees: '100+',
-      image: '../src/assets/Events/E6.jpg',
+      image: event6,
     },
     {
       title: "VITS Academy 24'",
       date: 'July 06, 2024',
       attendees: '50+',
-      image: '../src/assets/Events/E1.jpg',
+      image: event1,
     },
      {
       title: 'Intra School Quiz Competition',
       date: 'April 13, 2024',
       attendees: '50+',
-      image: '../src/assets/Events/E10.jpg',
+      image: event10,
     },
 
     {
       title: 'Intra School Quiz Competition',
       date: 'April 13, 2024',
       attendees: '50+',
-      image: '../src/assets/Events/E5.jpg',
+      image: event5,
     },
         {
       title: 'Intra School Workshop (Phase 2)',
       date: 'April 13, 2024',
       attendees: '50+',
-      image: '../src/assets/Events/E4.jpg',
+      image: event4,
     },
         {
       title: 'Intra School Workshop (Phase 1)',
       date: 'April 13, 2024',
       attendees: '50+',
-      image: '../src/assets/Events/E3.jpg',
+      image: event3,
     },
     {
       title: 'AI For All',
       date: 'March 13, 2024',
       attendees: '100+',
-      image: '../src/assets/Events/E7.jpg',
+      image: event7,
     },
     {
       title: 'NEXNOVA` 23',
       date: 'March 10, 2023',
       attendees: '100+',
-      image: '../src/assets/Events/E9.jpg',
+      image: event9,
     },
     {
       title: 'Project Cascade',
       date: 'December 22, 2021',
       attendees: '100+',
-      image: '../src/assets/Events/E8.jpg',
+      image: event8,
     },
   ];
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import Crest from '../assets/Crest.png';
+import VITSLogo from '../assets/Vitslogo.png';
 
 const EnhancedFooter: React.FC = () => {
   const [hoveredSocial, setHoveredSocial] = useState<number | null>(null);
@@ -131,7 +133,7 @@ const EnhancedFooter: React.FC = () => {
 
                 <Link to="/" className="flex items-center space-x-3 group">
                   <img
-                    src="/src/assets/Crest.png"
+                    src={Crest}
                     alt="Vester School Crest"
                     className="h-10 w-auto rounded shadow-sm group-hover:shadow-md transition-shadow"
                     loading="lazy"
@@ -142,7 +144,7 @@ const EnhancedFooter: React.FC = () => {
                     // }}
                   />
                   <img
-                    src="/src/assets/Vitslogo.png"
+                    src={VITSLogo}
                     alt="VITS logo"
                     className="h-8 w-auto"
                     loading="lazy"

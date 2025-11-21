@@ -4,26 +4,42 @@ import EnhancedFooter from '@/components/EnhancedFooter';
 import Dock from '@/components/Dock';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
+import G1 from '@/assets/Gallery/G1.jpeg';
+import G2 from '@/assets/Gallery/G2.jpeg';
+import G3 from '@/assets/Gallery/G3.jpeg';
+import G4 from '@/assets/Gallery/G4.jpeg';
+import G5 from '@/assets/Gallery/G5.jpeg';
+import G6 from '@/assets/Gallery/G6.jpeg';
+import G7 from '@/assets/Gallery/G7.jpeg';
+import G8 from '@/assets/Gallery/G8.jpeg';
+import G9 from '@/assets/Gallery/G9.jpeg';
+import G10 from '@/assets/Gallery/G10.jpeg';
+import G11 from '@/assets/Gallery/G11.jpeg';
+import G12 from '@/assets/Gallery/G12.jpeg';
+import G13 from '@/assets/Gallery/G13.jpeg';
+import G14 from '@/assets/Gallery/G14.jpeg';
+import G15 from '@/assets/Gallery/G15.jpeg';
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const gallerySection = useScrollAnimation();
 
   const photos = [
-    { src: "src/assets/Gallery/G1.jpeg", title: "NETVORA '25", category: 'Events' },
-    { src: "src/assets/Gallery/G2.jpeg", title: "NEXNOVA '25", category: 'Events' },
-    { src: "src/assets/Gallery/G3.jpeg", title: "NEXNOVA '24", category: 'Events' },
-    { src: "src/assets/Gallery/G4.jpeg", title: "NEXORA '25", category: 'Acheivments' },
-    //{ src: "src/assets/Gallery/G9.jpeg", title: 'Sample', category: 'Events' },
-    { src: "src/assets/Gallery/G5.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
-    { src: "src/assets/Gallery/G6.jpeg", title: "SYNC '25", category: 'Events' },
-    { src: "src/assets/Gallery/G7.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
-    { src: "src/assets/Gallery/G8.jpeg", title: 'CODEDJAM 2025', category: 'Acheivments' },
-    { src: "src/assets/Gallery/G10.jpeg", title: '65TH BATTLE OF THE BABES', category: 'Events' },
-    { src: "src/assets/Gallery/G11.jpeg", title: '65TH BATTLE OF THE BABES', category: 'Events' },
-    { src: "src/assets/Gallery/G12.jpeg", title: '#', category: 'Events' },
-    { src: "src/assets/Gallery/G13.jpeg", title: 'PRIZE GIVING 2025', category: 'Events' },
-    { src: "src/assets/Gallery/G14.jpeg", title: 'UOP SCHOOL WEB DEVELOPMENT WORKSHOP', category: 'Events' },
-    { src: "src/assets/Gallery/G15.jpeg", title: "CYBERNETICS '25", category: 'Events' },
+    { src: G1, title: "NETVORA '25", category: 'Events' },
+    { src: G2, title: "NEXNOVA '25", category: 'Events' },
+    { src: G3, title: "NEXNOVA '24", category: 'Events' },
+    { src: G4, title: "NEXORA '25", category: 'Acheivments' },
+    //{ src: G5, title: 'Sample', category: 'Events' },
+    { src: G6, title: 'CODEDJAM 2025', category: 'Acheivments' },
+    { src: G7, title: "SYNC '25", category: 'Events' },
+    { src: G8, title: 'CODEDJAM 2025', category: 'Acheivments' },
+    { src: G9, title: 'CODEDJAM 2025', category: 'Acheivments' },
+    { src: G10, title: '65TH BATTLE OF THE BABES', category: 'Events' },
+    { src: G11, title: '65TH BATTLE OF THE BABES', category: 'Events' },
+    { src: G12, title: '#', category: 'Events' },
+    { src: G13, title: 'PRIZE GIVING 2025', category: 'Events' },
+    { src: G14, title: 'UOP SCHOOL WEB DEVELOPMENT WORKSHOP', category: 'Events' },
+    { src: G15, title: "CYBERNETICS '25", category: 'Events' },
 
   ];
 

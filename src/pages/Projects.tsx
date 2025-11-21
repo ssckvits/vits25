@@ -5,6 +5,8 @@ import EnhancedFooter from '@/components/EnhancedFooter';
 import Dock from '@/components/Dock';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
+import scoreboard from '@/assets/Projects/Scoreboard.jpeg';
+
 const Projects = () => {
   const projectsSection = useScrollAnimation();
   const ctaSection = useScrollAnimation();
@@ -14,7 +16,7 @@ const Projects = () => {
       title: '65th Battle of the Babes Live Scoreboard',
       description: 'A real-time web application providing live scores, player stats, and match updates for the prestigious 65th Battle of the Babes cricket match between St. Sylvester\'s College and Vidyartha College.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Google Firebase'],
-      image: '../src/assets/Projects/Scoreboard.jpeg',
+      image: scoreboard,
       team: 'Aashir Ahamed, Navod Niroshana',
       status: 'Live',
     },
