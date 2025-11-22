@@ -20,6 +20,11 @@ import event5 from '@/assets/Events/E5.jpg';
 import event6 from '@/assets/Events/E6.jpg';
 import event8 from '@/assets/Events/E8.jpg';
 
+import G7 from '@/assets/Gallery/G7.jpeg';
+import W2 from '@/assets/Wins/W2.webp';
+import W3 from '@/assets/Wins/W3.webp';
+import G15 from '@/assets/Gallery/G15.jpeg';
+
 import Win1 from '@/assets/Wins/W1.jpeg';
 
 interface Article {
@@ -71,34 +76,29 @@ function Home() {
 
   const slides = [
     {
+      id: 4,
+      imageUrl: G7,
+      title: 'Codejam 2025s',
+      description: 'Conducted by Computer Science faculty of University of Moratuwa. Held on April 26th at the university premises, the event showcased innovation, skill, and teamwork. Congratulations to Ranuja Gunawardhane, Thumira Munasinghe, Maleesha Miyuranga, and Gayansha Rathnayake on this remarkable achievement!'
+    },
+    {
       id: 1,
-      imageUrl: event6,
-      title: 'Journey Through the Mountains',
-      description: 'Experience the breathtaking views and serene landscapes of the high peaks.'
+      imageUrl: W2,
+      title: 'NEXORA’25',
+      description:
+      "Our talented students shined at NEXORA’25, the inter-school ICT competition by Trinity College. 💻✨ 🏆 Champions in Web Designing & Video Editing 🥈 1st Runner Up in Logo Designing🥉 2nd Runner Up in Logo Designing. Congratulations to all the winners – your hard work and creativity truly paid off!"
     },
     {
       id: 2,
-      imageUrl: event8,
-      title: 'The Calm of the Lake',
-      description: 'Discover tranquility by the still waters, reflecting the endless sky.'
+      imageUrl: W3,
+      title: 'E-VICTS ’25',
+      description: "Congratulations to our outstanding Sylvestrians! 🎉 We’re proud to celebrate the winners of E- VICTS ’25, the inter - school ICT competition organized by the ICT Society of Viharamahadevi Girls’ College. 💻✨ 🥇 Poster(Grade 10–11) – Yonal Gamage – Champion🥇 Logo Designing(Grade 10–11) – M.S.M.Mahdi – Champion🥈 Presentation – Maleesha Sandun & Gayansha Thameera – 1st Runner Up🥉 Poster(Grade 12–13) – Maleesha Sandun – 2nd Runner Up. Your hard work, creativity, and passion for ICT shine bright! 💪💡"
     },
     {
       id: 3,
-      imageUrl: event5,
-      title: 'A Walk with a Friend',
-      description: 'Cherish simple moments and loyal companionship on a scenic path.'
-    },
-    {
-      id: 4,
-      imageUrl: event2,
-      title: 'Architectural Wonders',
-      description: 'Explore the intricate designs and timeless beauty of historic castles.'
-    },
-    {
-      id: 5,
-      imageUrl: event1,
-      title: 'Coastal Adventures',
-      description: 'Feel the ocean breeze and listen to the rhythm of the waves on a rocky shore.'
+      imageUrl: G15,
+      title: 'CYBERNETICS’25',
+      description: 'Ashir Ahamed from St. Sylvester’s College, Kandy earned the 1st Runner Up title in the Web Development category in CYBERNETICS`25 Inter-School Competition Series, delivering standout skill and creativity.'
     },
   ];
 
@@ -204,7 +204,7 @@ function Home() {
     }
   }, []);
 
-const startAutoScroll = useCallback(() => {
+  const startAutoScroll = useCallback(() => {
     stopAutoScroll();
     autoScrollIntervalRef.current = window.setInterval(() => {
       if (!isHoveringRef.current && !dragState.current.isDragging && scrollContainerRef.current) {
@@ -213,10 +213,10 @@ const startAutoScroll = useCallback(() => {
         const originalContentWidth = container.scrollWidth / 2;
 
         if (container.scrollLeft >= originalContentWidth) {
-            // When we scroll past the original content, reset to the beginning smoothly
-            container.scrollLeft -= originalContentWidth;
+          // When we scroll past the original content, reset to the beginning smoothly
+          container.scrollLeft -= originalContentWidth;
         } else {
-            container.scrollLeft += 0.5; // Scroll speed
+          container.scrollLeft += 0.5; // Scroll speed
         }
       }
     }, 25);
@@ -380,8 +380,8 @@ const startAutoScroll = useCallback(() => {
                 onMouseLeave={handleCollapse}
               />
             ))} */}
-            {/* Duplicate for seamless scroll */}
-            {/* {articles.map((article, index) => {
+      {/* Duplicate for seamless scroll */}
+      {/* {articles.map((article, index) => {
               const uniqueIndex = index + articles.length;
               return (
                 <NewsCard 
