@@ -76,12 +76,6 @@ function Home() {
 
   const slides = [
     {
-      id: 4,
-      imageUrl: G7,
-      title: 'Codejam 2025s',
-      description: 'Conducted by Computer Science faculty of University of Moratuwa. Held on April 26th at the university premises, the event showcased innovation, skill, and teamwork. Congratulations to Ranuja Gunawardhane, Thumira Munasinghe, Maleesha Miyuranga, and Gayansha Rathnayake on this remarkable achievement!'
-    },
-    {
       id: 1,
       imageUrl: W2,
       title: 'NEXORA’25',
@@ -99,6 +93,12 @@ function Home() {
       imageUrl: G15,
       title: 'CYBERNETICS’25',
       description: 'Ashir Ahamed from St. Sylvester’s College, Kandy earned the 1st Runner Up title in the Web Development category in CYBERNETICS`25 Inter-School Competition Series, delivering standout skill and creativity.'
+    },
+    {
+      id: 4,
+      imageUrl: G7,
+      title: 'Codejam 2025',
+      description: 'Conducted by Computer Science faculty of University of Moratuwa. Held on April 26th at the university premises, the event showcased innovation, skill, and teamwork. Congratulations to Ranuja Gunawardhane, Thumira Munasinghe, Maleesha Miyuranga, and Gayansha Rathnayake on this remarkable achievement!'
     },
   ];
 
