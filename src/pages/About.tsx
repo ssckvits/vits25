@@ -23,7 +23,7 @@ const About = () => {
       social: { linkedin: 'https://www.linkedin.com/in/maleesha-miyuranga-b2856538b', email: 'hgmsmiyuranga@gmail.com' },
     },
     {
-      name: 'Gayansha Thameera',
+      name: 'Gayansha Rathnayake',
       role: 'Secretary',
       image: Gayansha,
       social: { linkedin: 'https://lk.linkedin.com/in/gayansha-rathnayake-527182252', email: 'gayansha.t.r@gmail.com' },
