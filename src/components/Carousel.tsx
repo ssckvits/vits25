@@ -84,6 +84,14 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, autoPlayInterval = 5
     };
   }, []);
 
+  const truncateDescription = (text: string, maxLines: number = 3): string => {
+    const lines = text.split('\n');
+    if (lines.length > maxLines) {
+      return lines.slice(0, maxLines).join('\n') + '...';
+    }
+    return text;
+  };
+
   if (!slides || slides.length === 0) {
     return (
         <div className="flex items-center justify-center w-full h-96 bg-gray-200 rounded-lg">
@@ -112,7 +120,7 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, autoPlayInterval = 5
                 <div className="w-full h-full bg-black bg-opacity-40 flex items-end p-8 md:p-12">
                   <div className="text-white max-w-2xl">
                     <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4">{slide.title}</h2>
-                    <p className="text-md md:text-lg">{slide.description}</p>
+                    <p style={{ whiteSpace: 'pre-line' }} className="text-md md:text-lg line-clamp-3">{truncateDescription(slide.description)}</p>
                   </div>
                 </div>
               </div>
@@ -192,7 +200,7 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, autoPlayInterval = 5
             <div className="overflow-y-auto p-6 md:p-8">
               <img src={expandedSlide.imageUrl} alt={expandedSlide.title} className="w-full h-auto max-h-[60vh] object-contain rounded-lg mb-6" />
               <h2 id="modal-title" className="text-3xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-cyan-600">{expandedSlide.title}</h2>
-              <p className="text-md md:text-lg text-gray-300">{expandedSlide.description}</p>
+              <p style={{ whiteSpace: 'pre-line' }} className="text-md md:text-lg text-gray-300">{expandedSlide.description}</p>
             </div>
           </div>
         </div>

@@ -23,6 +23,7 @@ import event8 from '@/assets/Events/E8.jpg';
 import G7 from '@/assets/Gallery/G7.jpeg';
 import W2 from '@/assets/Wins/W2.webp';
 import W3 from '@/assets/Wins/W3.webp';
+import W4 from '@/assets/Wins/W4.webp';
 import G15 from '@/assets/Gallery/G15.jpeg';
 
 import Win1 from '@/assets/Wins/W1.jpeg';
@@ -52,53 +53,62 @@ function Home() {
       icon: Award,
       title: 'ICT Society',
       place: Win1,
-      description: 'Recognized as the leading society at SSCK'
+      description: <p>Recognized as the leading society at SSCK</p>
     },
     {
       icon: Users,
       title: '500+ Members',
       place: event1,
-      description: 'Growing community of tech enthusiasts and innovators'
+      description: <p>Growing community of tech enthusiasts and innovators</p>
     },
     {
       icon: Award,
       title: '50+ Events',
       place: event6,
-      description: 'Technical workshops, hackathons, and competitions'
+      description: <p>Technical workshops, hackathons, and competitions</p>
     },
     {
       icon: Award,
       title: '100+ Projects',
       place: event8,
-      description: 'Innovative student projects across various domains'
+      description: <p>Innovative student projects across various domains</p>
     },
   ];
 
   const slides = [
     {
       id: 1,
-      imageUrl: W2,
-      title: 'NEXORA’25',
-      description:
-      "Our talented students shined at NEXORA’25, the inter-school ICT competition by Trinity College. 💻✨ 🏆 Champions in Web Designing & Video Editing 🥈 1st Runner Up in Logo Designing🥉 2nd Runner Up in Logo Designing. Congratulations to all the winners – your hard work and creativity truly paid off!"
+      imageUrl: W4,
+      title: 'SPLENDOUR’25',
+      description: '​We are thrilled to announce the outstanding success of our students at Splendour ‘25, the Inter-School ICT Competitions organized by the Antonian Computer Fraternity. Our talented tech enthusiasts have secured the top spots across multiple creative disciplines:\n\nWeb Design: Maleesha Miyuranga – 1st Place\n\nPoster Design: Navod Niroshana – 1st Place\n\nVideo Editing: Ranuja Gunawardhane – 1st Place\n\nCongratulations to the winners for their hard work and innovation. You have made the St. Sylvester\'s College ICT Society incredibly proud.\n\n#Splendour25\n#VITS',
     },
     {
       id: 2,
-      imageUrl: W3,
-      title: 'E-VICTS ’25',
-      description: "Congratulations to our outstanding Sylvestrians! 🎉 We’re proud to celebrate the winners of E- VICTS ’25, the inter - school ICT competition organized by the ICT Society of Viharamahadevi Girls’ College. 💻✨ 🥇 Poster(Grade 10–11) – Yonal Gamage – Champion🥇 Logo Designing(Grade 10–11) – M.S.M.Mahdi – Champion🥈 Presentation – Maleesha Sandun & Gayansha Thameera – 1st Runner Up🥉 Poster(Grade 12–13) – Maleesha Sandun – 2nd Runner Up. Your hard work, creativity, and passion for ICT shine bright! 💪💡"
+      imageUrl: W2,
+      title: 'NEXORA’25',
+      description:
+        "Our talented students shined at NEXORA'25, the inter-school ICT competition by Trinity College. 💻✨\n🏆 Champions in Web Designing & Video Editing\n🥈 1st Runner Up in Logo Designing\n🥉 2nd Runner Up in Logo Designing\nCongratulations to all the winners – your hard work and creativity truly paid off!",
     },
     {
       id: 3,
-      imageUrl: G15,
-      title: 'CYBERNETICS’25',
-      description: 'Ashir Ahamed from St. Sylvester’s College, Kandy earned the 1st Runner Up title in the Web Development category in CYBERNETICS`25 Inter-School Competition Series, delivering standout skill and creativity.'
+      imageUrl: W3,
+      title: 'E-VICTS ’25',
+      description:
+        "Congratulations to our outstanding Sylvestrians! 🎉\nWe're proud to celebrate the winners of E- VICTS '25, the inter-school ICT competition organized by the ICT Society of Viharamahadevi Girls' College. 💻✨\n🥇 Poster(Grade 10–11) – Yonal Gamage – Champion\n🥇 Logo Designing(Grade 10–11) – M.S.M.Mahdi – Champion\n🥈 Presentation – Maleesha Sandun & Gayansha Thameera – 1st Runner Up\n🥉 Poster(Grade 12–13) – Maleesha Sandun – 2nd Runner Up\nYour hard work, creativity, and passion for ICT shine bright! 💪💡",
     },
     {
       id: 4,
+      imageUrl: G15,
+      title: 'CYBERNETICS’25',
+      description:
+        "Ashir Ahamed from St. Sylvester's College, Kandy earned the 1st Runner Up title in the Web Development category in CYBERNETICS`25 Inter-School Competition Series, delivering standout skill and creativity.",
+    },
+    {
+      id: 5,
       imageUrl: G7,
       title: 'Codejam 2025',
-      description: 'Conducted by Computer Science faculty of University of Moratuwa. Held on April 26th at the university premises, the event showcased innovation, skill, and teamwork. Congratulations to Ranuja Gunawardhane, Thumira Munasinghe, Maleesha Miyuranga, and Gayansha Rathnayake on this remarkable achievement!'
+      description:
+        "Conducted by Computer Science faculty of University of Moratuwa.\nHeld on April 26th at the university premises, the event showcased innovation, skill, and teamwork.\nCongratulations to Ranuja Gunawardhane, Thumira Munasinghe, Maleesha Miyuranga, and Gayansha Rathnayake on this remarkable achievement!",
     },
   ];
 
