@@ -28,6 +28,8 @@ import G15 from '@/assets/Gallery/G15.jpeg';
 
 import Win1 from '@/assets/Wins/W1.jpeg';
 
+import BOTBLogo from '@/assets/BOTB Logo.png';
+
 interface Article {
   title: string;
   summary: string;
@@ -253,6 +255,21 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
+
+      {/* Live Event Overlay */}
+      <div className="fixed top-4 right-4 z-50">
+        <Card className="bg-gradient-to-r from-red-600 to-pink-600 text-white cursor-pointer hover:scale-105 transition-transform shadow-lg border-0" onClick={() => window.open('https://example.com', '_blank')}>
+            <CardContent className="p-3 flex items-center gap-3">
+              <img src={BOTBLogo} alt="BOTB" className="w-8 h-8 flex-shrink-0"/>
+              <div>
+              <p className="text-xs font-bold animate-pulse">66th Battle of the Babes</p>
+              <p className="text-xs font-bold animate-pulse">St. Sylvester's VS Vidyartha</p>
+              <p className="text-xs font-bold animate-pulse">At Pallekele International Cricket Stadium</p>
+              </div>
+            </CardContent>
+        </Card>
+      </div>
+
       <ScrollEffects />
       <InteractiveHero />
 

@@ -244,7 +244,7 @@ const EnhancedFooter: React.FC = () => {
           <div className="mt-12 pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-gray-400 text-sm">
-                © 2025 VITS - ICT Society of St. Sylvester's College. All rights reserved.
+                © 2026 VITS - ICT Society of St. Sylvester's College. All rights reserved.
               </div>
               <div className="text-gray-400 text-sm flex items-center space-x-4">
                 <span>Made with</span>
