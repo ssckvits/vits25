@@ -258,13 +258,12 @@ function Home() {
 
       {/* Live Event Overlay */}
       <div className="fixed top-4 right-4 z-50">
-        <Card className="bg-gradient-to-r from-red-600 to-pink-600 text-white cursor-pointer hover:scale-105 transition-transform shadow-lg border-0" onClick={() => window.open('https://bigmatch.vits.lk', '_blank')}>
-            <CardContent className="p-3 flex items-center gap-3">
-              <img src={BOTBLogo} alt="BOTB" className="w-8 h-8 flex-shrink-0"/>
-              <div>
-              <p className="text-xs font-bold animate-pulse">66th Battle of the Babes</p>
-              <p className="text-xs font-bold animate-pulse">St. Sylvester's VS Vidyartha</p>
-              <p className="text-xs font-bold animate-pulse">At Pallekele International Cricket Stadium</p>
+        <Card className="bg-white text-black cursor-pointer hover:scale-105 transition-all duration-300 shadow-2xl border border-gray-200 backdrop-blur-sm">
+            <CardContent className="p-6 flex flex-col items-center gap-4">
+              <div className="text-center">
+                <div className="text-sm font-semibold tracking-widest text-gray-700 uppercase mb-3">In Remembrance</div>
+                <div className="text-xl font-bold text-black italic" style={{ fontFamily: "'Playfair Display', serif" }}>Nethula & Sachith</div>
+                <div className="text-sm font-medium text-gray-600 mt-3">Rest Easy Brothers 🤍</div>
               </div>
             </CardContent>
         </Card>
