@@ -257,7 +257,7 @@ function Home() {
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
 
       {/* Live Event Overlay */}
-      <div className="fixed top-4 right-4 z-50">
+      {/* <div className="fixed top-4 right-4 z-50">
         <Card className="bg-white text-black cursor-pointer hover:scale-105 transition-all duration-300 shadow-2xl border border-gray-200 backdrop-blur-sm">
             <CardContent className="p-6 flex flex-col items-center gap-4">
               <div className="text-center">
@@ -267,7 +267,7 @@ function Home() {
               </div>
             </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <ScrollEffects />
       <InteractiveHero />
